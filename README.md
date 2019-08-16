@@ -18,6 +18,5 @@ COMO INSTALAR:
 
 Email:
    
-   cavithemes@gmail.com
-   s.carolaine.v@gmail.com
+   cavithemes@gmail.com  //  s.carolaine.v@gmail.com
 
