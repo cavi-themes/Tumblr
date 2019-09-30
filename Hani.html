@@ -1,8 +1,14 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="{block:English}en{/block:English}{block:French}fr{/block:French}{block:German}de{/block:German}{block:Japanese}ja{/block:Japanese}{block:Italian}it{/block:Italian}{block:Spanish}es{/block:Spanish}{block:Polish}pl{/block:Polish}{block:Portuguese}pt{/block:Portuguese}" xmlns="https://www.w3.org/1999/xhtml">
 
     <head prefix="og: https://ogp.me/ns# fb: https://ogp.me/ns/fb# blog: https://ogp.me/ns/blog#" profile="https://gmpg.org/xfn/11">
         <!---
+        ╔═══╦═══╦╗──╔╦══╗
+        ║╔═╗║╔═╗║╚╗╔╝╠╣╠╝
+        ║║─╚╣║─║╠╗║║╔╝║║
+        ║║─╔╣╚═╝║║╚╝║─║║
+        ║╚═╝║╔═╗║╚╗╔╝╔╣╠╗
+        ╚═══╩╝─╚╝─╚╝─╚══╝
         THEME; HANI; CREATED BY @CAVI THEMES
         cavithemes.tumblr.com
         --->
@@ -124,15 +130,21 @@
             #post {
                 width:1076px;
                 {block:IfNotBanner}
-                    margin:80px auto 0 auto;
+                    {block:IfTabPanels}
+                        margin:90px auto 0 auto;
+                    {/block:IfTabPanels}
+                    {block:IfNotTabPanels}
+                        margin:40px auto 0 auto;
+                    {/block:IfNotTabPanels}
                 {/block:IfNotBanner}
                 {block:IfBanner}
-                    margin:-1px auto 0 auto;
+                    {block:IfTabPanels}
+                        margin:-1px auto 0 auto;
+                    {/block:IfTabPanels}
+                    {block:IfNotTabPanels}
+                        margin:10px auto 0 auto;
+                    {/block:IfNotTabPanels}
                 {/block:IfBanner}
-                {block:PermalinkPage}
-                    margin:80px auto 0 auto;    
-                {/block:PermalinkPage}
-                
             }
             
             .entry {
@@ -395,6 +407,11 @@
             aside#lado {
                 float:right;
                 width:265px;
+                -webkit-transition: all ease-in-out 0.5s;
+                -moz-transition: all ease-in-out 0.5s;
+                -o-transition: all ease-in-out 0.5s;
+                -ms-transition: all ease-in-out 0.5s;    
+                transition: all ease-in-out 0.5s;
             }
             
             aside#sidefix {
@@ -402,26 +419,32 @@
                 float:left;
                 padding:15px;
                 position:fixed;
-                top:62px;
+                {block:IfTabPanels}
+                    top:72px;
+                {/block:IfTabPanels}
+                {block:IfNotTabPanels}
+                    top:35px;
+                {/block:IfNotTabPanels}
                 text-align:center;
+            }
+            aside#sidefix .perfil {
+                text-align:right;
             }
             aside#sidefix img.perfil {
                 padding:10px;
-                width:calc(80% - 14px);
+                width:calc(60% - 14px);
                 background:{color:sidebar bg};
                 border:1px solid {color:sidebar borders};
                 border-radius:100%;
             }
             aside#sidefix .description {
                 border-radius:3px;
-                padding:20px;
-                text-align:justify;
+                padding:10px;
+                text-align:right;
                 color:{color:sidebar text};
-                background:{color:sidebar bg};
-                border:1px solid {color:sidebar borders};
             }
             aside#sidefix.stick {
-                top:0;
+                top:10px;
                 -webkit-transition: all ease-in-out 0.5s;
                 -moz-transition: all ease-in-out 0.5s;
                 -o-transition: all ease-in-out 0.5s;
@@ -806,22 +829,17 @@
             }
             
             .ic {
-            margin-right:auto;
-            margin-left:auto;
-            width:1068px;
-            vertical-align:bottom;
-            overflow:hidden; 
-            padding-top:10px;
-            padding-bottom:10px;
-            margin-top:0px;
-            margin-bottom:0px;
-            text-align:center;
-            z-index:99;
-            border-top:1px solid {color:borders};
-            border-left:1px solid {color:borders};
-            border-right:1px solid {color:borders};
-            background:{color:post};
-            clear:both;
+                margin:0 auto;
+                width:1068px;
+                vertical-align:bottom;
+                overflow:hidden; 
+                padding:10px 0;
+                text-align:center;
+                z-index:99;
+                border:1px solid {color:borders};
+                border-bottom:none !important;
+                background:{color:post};
+                clear:both;
             }
             .ic a { color:black; }
             
@@ -850,7 +868,7 @@
                 border-radius:100%;
                 padding:7px;
                 text-align:center;
-                min-width:13px;
+                width:14px;
                 background:rgba({RGBcolor:borders},0.3);
                 color:{color:text};
                 border:1px solid {color:borders};
@@ -884,7 +902,7 @@
             left:auto;
             right:auto;
             padding:10px 0 3px 0;
-            z-index:99;
+            z-index:9999;
             background:{color:header bg};
             }
             header.stick {
@@ -1057,16 +1075,24 @@
             
             .banner img {
             width:803px;
-            margin:73px 0 10px 263px;
+            {block:IfNotBanner}
+                display:none;
+            {/block:IfNotBanner}
+            {block:IfBanner}
+                {block:IfTabPanels}
+                    margin:73px 0 10px 263px;
+                {/block:IfTabPanels}
+                {block:IfNotTabPanels}
+                    margin:20px 0 10px 263px;
+                {/block:IfNotTabPanels}
+            {/block:IfBanner}
             height:auto;
             padding:10px;
             }
             
             .perfil {
-            width:calc(100% + 0px);
-            margin-left:0px;
-            margin-top:0px;
-            margin-bottom:10px;
+                width:calc(100% + 0px);
+                margin:0 0 5px 35%;
             }
             
             ul#likes {
@@ -1203,8 +1229,7 @@
                 $('header').removeClass('stick');
               }
             });
-        </script>
-        <script>
+            
             $(window).scroll(function () {
               if($(this).scrollTop() > 450) {
                 $('aside#sidefix').addClass('stick');
@@ -1232,7 +1257,7 @@
         
             <aside id="sidefix">
             
-                <img src="{image:sidebar}" class="perfil">
+                <a href="{BlogUrl}" title="{lang:Home}"><img src="{image:sidebar}" class="perfil"></a>
                 {block:Description}
                     <div class="description">
                         {Description}
@@ -1244,20 +1269,20 @@
                     <a href="/random" title="{lang:Random}"><span class="oi-shuffle"></span></a>
                     <a href="{RSS}" title="Rss"><span class="oi-map"></span></a>
                 </div>
-            
-                <header>
-                    <div class="tabs">
-                        <ul class="tab-links">
-                            <li class="bt"><a href="/" >{Title}</a></li> 
-                            {block:IfTabPanels}
-                                <li class="active"><a href="#tab1">Posts</a></li>
-                                <li><a href="#tab2">Informations</a></li> 
-                                <li><a href="#tab3">Extras</a></li>
-                                <li><a href="#tab4">Contact</a></li>
-                            {/block:IfTabPanels}
-                        </ul>
-                    </div>
-                </header>
+                
+                {block:IfTabPanels}
+                    <header>
+                        <div class="tabs">
+                            <ul class="tab-links">
+                                <li class="bt"><a href="/" >{Title}</a></li> 
+                                    <li class="active"><a href="#tab1">Posts</a></li>
+                                    <li><a href="#tab2">Informations</a></li> 
+                                    <li><a href="#tab3">Extras</a></li>
+                                    <li><a href="#tab4">Contact</a></li>
+                            </ul>
+                        </div>
+                    </header>
+                {/block:IfTabPanels}
             
             </aside>
             
@@ -1669,13 +1694,13 @@
         
         <div class="ic">
             <div id="novex">
-                <a href="{text:Facebook Url}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> &nbsp;Facebook</a>
-                <a href="{text:TwitterUrl}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> &nbsp;Twitter</a>
-                <a href="{text:GooglePlus Url}" target="_blank"><i class="fa fa-google" aria-hidden="true"></i> &nbsp;Google +</a>
-                <a href="{text:Pinterest Url}" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i> &nbsp;Pinterest</a>
-                <a href="{text:Instagram Url}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> &nbsp;Instagram</a>
-                <a href="{text:Youtube Url}" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i> &nbsp;Youtube</a>
-                <a href="{text:Tumblr Url}" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i> &nbsp;Tumblr</a>
+                {block:IfFacebookUrl}<a href="{text:Facebook Url}" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i> &nbsp;Facebook</a>{/block:IfFacebookUrl}
+                {block:IfTwitterUrl}<a href="{text:TwitterUrl}" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i> &nbsp;Twitter</a>{/block:IfTwitterUrl}
+                {block:IfGooglePlusUrl}<a href="{text:GooglePlus Url}" target="_blank"><i class="fa fa-google" aria-hidden="true"></i> &nbsp;Google +</a>{/block:IfGooglePlusUrl}
+                {block:IfPinterestUrl}<a href="{text:Pinterest Url}" target="_blank"><i class="fa fa-pinterest" aria-hidden="true"></i> &nbsp;Pinterest</a>{/block:IfPinterestUrl}
+                {block:IfInstagramUrl}<a href="{text:Instagram Url}" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i> &nbsp;Instagram</a>{/block:IfInstagramUrl}
+                {block:IfYouTubeUrl}<a href="{text:Youtube Url}" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i> &nbsp;Youtube</a>{/block:IfYouTubeUrl}
+                {block:IfTumblrUrl}<a href="{text:Tumblr Url}" target="_blank"><i class="fa fa-tumblr" aria-hidden="true"></i> &nbsp;Tumblr</a>{/block:IfTumblrUrl}
             </div>
         </div>
         
