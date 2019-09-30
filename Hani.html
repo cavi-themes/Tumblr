@@ -40,13 +40,14 @@
         <meta name="color:Sidebar text" content="#444" />
         
         <meta name="if:Caption" content="/" />
+        <meta name="if:Borders" content="/" />
         <meta name="if:Tab Panels" content="/" />
-        <meta name="if:Banner" content="" />
-        <meta name="if:Following" content="" />
-        <meta name="if:Projects" content="" />
-        <meta name="if:Posts I Like" content="" />
+        <meta name="if:Banner" content="/" />
+        <meta name="if:Following" content="/" />
+        <meta name="if:Projects" content="/" />
+        <meta name="if:Posts I Like" content="/" />
         <meta name="if:Via E Source" content="/" />
-        <meta name="if:Affliates" content="" />
+        <meta name="if:Affliates" content="/" />
         <meta name="if:Members" content="/" />
         <meta name="if:Navigate" content="/" />
         <meta name="if:Search Box" content="/" />
@@ -152,7 +153,7 @@
                 margin-left:250px;
                 margin:0 0 20px 272px;
                 background:{color:post};
-                border:1px solid {color:borders};
+                {block:IfBorders}border:1px solid {color:borders};{/block:IfBorders}
                 border-radius:{select:Post Border Radius};
                 float:none;
             }
@@ -377,7 +378,7 @@
             
             .tabcontent {
                 background:{color:post};
-                border:1px solid {color:borders};
+                {block:IfBorders}border:1px solid {color:borders};{/block:IfBorders}
                 padding:20px;
                 margin-left:270px;
                 margin-bottom:20px;
@@ -457,7 +458,7 @@
                 padding:25px; 
                 height:auto; 
                 background:{color:post}; 
-                border:1px solid {color:borders};
+                {block:IfBorders}border:1px solid {color:borders};{/block:IfBorders}
                 color:{color:text};
                 line-height:1.4em;
             }
@@ -467,21 +468,27 @@
                 right: 0px;
                 display:none; 
                 z-index:999;
-                padding:15px;
-                color:{color:Accent};
+                padding:10px 15px;
+                color:{color:Text};
+                background:{color:Post};
+                {block:IfBorders}border-top:1px solid {color:borders}; border-left:1px solid {color:borders};{/block:IfBorders}
+                border-top-left-radius:30px;
             }
-            .scrollup a {color:{color:Accent};}
+            .scrollup:hover, .cc:hover {
+                background:{color:Accent};
+                color:{color:Post};
+            }
             
             .cc { 
                 position: fixed;
                 bottom: 0px; 
                 left: 0px;
-                padding:15px; 
-                font-size:15px;
-                z-index:999999;
-                color:{color:Accent};
+                padding:8px 15px 8px 10px;
+                color:{color:Text};
+                background:{color:Post};
+                {block:IfBorders}border-top:1px solid {color:borders}; border-right:1px solid {color:borders};{/block:IfBorders}
+                border-top-right-radius:30px;
             }
-            .cc a {color:{color:Accent};}
             
             footer {
                 width:1068px;
@@ -494,7 +501,7 @@
                 z-index:99;
                 font-size:13px;
                 background:{color:post};
-                border:1px solid {color:borders};
+                {block:IfBorders}border:1px solid {color:borders};{/block:IfBorders}
                 border-bottom:none;
                 clear:both;
             }
@@ -836,7 +843,7 @@
                 padding:10px 0;
                 text-align:center;
                 z-index:99;
-                border:1px solid {color:borders};
+                {block:IfBorders}border:1px solid {color:borders};{/block:IfBorders}
                 border-bottom:none !important;
                 background:{color:post};
                 clear:both;
@@ -1245,7 +1252,7 @@
     </head>
     <body>
     
-        <a href="#" class="scrollup"><li style="font-size:35px;" class="fa fa-angle-double-up"></li></a>
+        <a href="#" class="scrollup"><li style="font-size:25px;" class="fa fa-angle-double-up"></li></a>
         
         {block:IndexPage}
             <div class="banner">
