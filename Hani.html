@@ -159,7 +159,7 @@
                 float:none;
             }
             
-            .entry img { max-width:500px; height:auto !important; margin-bottom:-5px;}
+            .entry img { max-width:100%; height:auto !important; margin-bottom:-5px;}
             .photoset { margin-bottom:-5px; }
             
             #notas { border-top:1px solid {color:Borders}; color:{color:Text}; }
@@ -225,7 +225,7 @@
             font-size:30px; 
             line-height:30px;
             text-align:center;
-            margin:5px;
+            margin-bottom:15px;
             }
             
             h2 { color:{color:Accent}; font-size:20px; }
@@ -253,7 +253,7 @@
             .caption a:hover {border-bottom:1px solid;}
             
             .tcaption {
-                padding:10px;
+                padding:25px;
             }
             
             .seureblog {
@@ -1462,7 +1462,7 @@
                             </div>
                         {/block:TagPage}
                     
-                        {block:Posts}
+                        {block:Posts inlineMediaWidth="1280"}
                             
                             <div class="entry">
                                 
@@ -1481,11 +1481,7 @@
                                     {/block:RebloggedFrom}
                                 {/block:IfViaESource}
                             
-                                {block:Title} 
-                                <h1>{Title}</h1>
-                                {/block:Title}
-                                
-                                {block:Text}<div class="tcaption">{Body}</div>{/block:Text}
+                                {block:Text}<div class="tcaption">{block:Title} <h1><a href="{Permalink}">{Title}</a></h1>{/block:Title} {Body}</div>{/block:Text}
                                 
                                 {block:Photo}<img src="{PhotoURL-HighRes}" />{/block:Photo}
                                 
