@@ -102,7 +102,7 @@
         <style type="text/css">
         
             html, body {
-            width:100%;
+                width:100%;
             }
             body {
                 margin:0;
@@ -225,7 +225,7 @@
             font-size:30px; 
             line-height:30px;
             text-align:center;
-            margin-bottom:15px;
+            margin:0 0 15px 0;
             }
             
             h2 { color:{color:Accent}; font-size:20px; }
@@ -965,7 +965,7 @@
                 margin:-20px 0 5px 0;
                 padding:10px;
                 font-weight:600;
-                color:{color:Accent};
+                color:{color:Text};
             }
             .caixas_title_left > span{
             position: relative;
@@ -1031,43 +1031,53 @@
             
             .members {
                 vertical-align:middle;
-                text-transform:uppercase;
-                font-size:11px;
                 margin:0 0 5px 0;
-                line-height:15px;
+                padding:5px 0;
                 text-align:left;
                 display:block;
+                border-bottom:1px solid {color:Borders};
+                font-size:{text:font size}px;
+            }
+            .members .mdd {
+                display:inline-block;
+                vertical-align:top;
+                margin: 5px 0 0 5px;
+            }
+            .members a {
+                font-weight:600;
+                text-transform:uppercase;
+                font-size:{text:font size}px !important;
+                color:{color:Text};
             }
             .members img {
-            width:48px;
-            float:left;
-            border-radius:100px;
-            margin-right:10px;
-            margin-left:0px;
+                display:inline-block;
+                width:50px;
+                border-radius:100px;
             }
             
             .project {
-            vertical-align:middle;
-            text-transform:uppercase;
-            font-size:10px;
-            letter-spacing:1px;
-            margin-left:-5px;
-            margin-bottom:-20px;
-            margin-top:0px;
-            padding:5px 0px 0px 8px;
-            line-height:15px;
-            text-align:left;
-            display:block;
+                letter-spacing:1px;
+                margin:0 0 10px 0;
+                padding:15px;
+                line-height:18px;
+                display:block;
+                border-radius:3px;
+                background:{color:Accent};
+                color:{color:Post};
             }
-            
-            .project p {
-            margin-top:30px;
-            margin-bottom:30px;
+            .project:last-child {
+                margin:0 0 0 0 !important;
             }
-            
-            .project img{
-            width:100%;
-            margin-bottom:5px;
+            .project b {
+                text-transform:uppercase;
+                color:{color:Post};
+                text-decoration:underline;
+                margin-right:3px;
+            }
+            .project img {
+                border-radius:4px;
+                max-width:100%;
+                margin-bottom:5px;
             }
             
             .banner {
@@ -1255,11 +1265,9 @@
     
         <a href="#" class="scrollup"><li style="font-size:25px;" class="fa fa-angle-double-up"></li></a>
         
-        {block:IndexPage}
-            <div class="banner">
-                <img src="{image:headerimage}" >
-            </div>
-        {/block:IndexPage}
+        <div class="banner">
+            <img src="{image:headerimage}" >
+        </div>
         
         <div id="post">
         
@@ -1375,10 +1383,8 @@
                                             <div class="members">
                                                 <a href="{GroupMemberURL}"> 
                                                 <img src="{GroupMemberPortraitURL-48}"></a> 
-                                                <div style="padding-top:8px;">
-                                                    <b>
-                                                        <a href="{GroupMemberURL}">{GroupMemberName}</a>
-                                                    </b>
+                                                <div class="mdd">
+                                                    <a href="{GroupMemberURL}">{GroupMemberName}</a>
                                                     <br>{GroupMemberTitle}
                                                 </div>
                                             </div>
@@ -1389,30 +1395,26 @@
                             
                             {block:IfProjects}
                                 <div class="caixas">
-                                
                                     <div class="caixas_title_left">
                                         <span>Projects</span>
                                     </div>
                                     
                                     <!---------- 
                                         START OF PROJECTS 
-                                        YOU CAN ADD AND REMOVE PROJECTS                                          ---------->
+                                        YOU CAN ADD AND REMOVE PROJECTS     
+                                        Note: <br> is for break line
+                                    ---------->
                                 
                                     <div class="project">
+                                        <img src="https://66.media.tumblr.com/e0c2ec6d853eb78e04ed333cafe2dd75/tumblr_pa6uq6F23g1w2i132o1_1280.jpg">
+                                        <b>title:</b> Movie Title <br>
+                                        <b>release:</b> Year
+                                    </div>
                                     
-                                    <img src="https://i.imgur.com/TyIcTNx.png">
-                                    <b>title:</b> movie title
-                                    <br><b>role:</b> character name
-                                    <br><b>release:</b> year
-                                    
-                                    
-                                    <p>
-                                    <img src="https://i.imgur.com/TyIcTNx.png">
-                                    <b>title:</b> movie title
-                                    <br><b>role:</b> character name
-                                    <br><b>release:</b> year
-                                    </p>
-                                    
+                                    <div class="project">
+                                        <img src="https://66.media.tumblr.com/a2f0a615e92bbfaa9ca9b9ab7cdeee9d/tumblr_pa6uq6F23g1w2i132o2_1280.jpg">
+                                        <b>title:</b> Movie Title <br>
+                                        <b>release:</b> Year
                                     </div>
                                         
                                     <!------------END OF PROJECTS---------->
