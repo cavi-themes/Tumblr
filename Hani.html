@@ -131,6 +131,7 @@
             
             #post {
                 width:1076px;
+                min-height: 82vh;
                 {block:IfNotBanner}
                     {block:IfTabPanels}
                         margin:90px auto 0 auto;
@@ -833,7 +834,7 @@
                 #search input[type="submit"] { border-color:{color:accent} !important; background:{color:Accent}; color:{color:post};}
             
             .solution {
-                padding:15px;
+                padding: 25px 25px 15px 25px;
             }
             
             .ic {
@@ -1469,18 +1470,16 @@
                             <div class="entry">
                                 
                                 {block:IfViaESource}
-                                    {block:RebloggedFrom}
-                                        <div class="from">
-                                            <a href="{ReblogParentURL}">
-                                                <img class="si" src="{ReblogParentPortraitURL-64}">
-                                            </a>
-                                            
-                                            <div class="sit">
-                                                <span>{lang:Posted by PostAuthorName 2}</span> <br>
-                                                {lang:Posted on DayOfWeek Month DayOfMonthWithSuffix Year}
-                                            </div>
+                                    <div class="from">
+                                        <a href="{PostAuthorURL}" title="{PostAuthorTitle} - @{PostAuthorName}">
+                                            <img class="si" src="{PostAuthorPortraitURL-128}">
+                                        </a>
+                                        
+                                        <div class="sit">
+                                            <span>{lang:Posted by PostAuthorName 2}</span> <br>
+                                           {block:Date} {lang:Posted on DayOfWeek Month DayOfMonthWithSuffix Year} {/block:Date}
                                         </div>
-                                    {/block:RebloggedFrom}
+                                    </div>
                                 {/block:IfViaESource}
                             
                                 {block:Text}<div class="tcaption">{block:Title} <h1><a href="{Permalink}">{Title}</a></h1>{/block:Title} {Body}</div>{/block:Text}
