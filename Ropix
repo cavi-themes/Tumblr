@@ -1400,6 +1400,12 @@
                     {/block:IfCaption}
                 {/block:Photoset}
                 
+                {block:Panorama}
+                    {LinkOpenTag}
+                        <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}"/>
+                    {LinkCloseTag}
+                {/block:Panorama}
+                
                 {block:Quote}
                     <div class="quote">
                         {Quote}
