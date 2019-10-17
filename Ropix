@@ -1262,7 +1262,7 @@
             <div class="boxs">
                 <h2>{lang:Navigate}</h2>
                 <div class="sl">
-                    <a href="{Random}">{lang:Random}</a>
+                    <a href="/random">{lang:Random}</a>
                     <a href="/archive">{lang:Archive}</a>
                     <a href="{RSS}">RSS</a>
                     {block:HasPages} 
