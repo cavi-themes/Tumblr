@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="{block:English}en{/block:English}{block:French}fr{/block:French}{block:German}de{/block:German}{block:Japanese}ja{/block:Japanese}{block:Italian}it{/block:Italian}{block:Spanish}es{/block:Spanish}{block:Polish}pl{/block:Polish}{block:Portuguese}pt{/block:Portuguese}">
+    <head>
+       <!--
+            
+            █▀▀ ▄▀█ █░█ █
+            █▄▄ █▀█ ▀▄▀ █
+            
+            ▀█▀ █░█ █▀▀ █▀▄▀█ █▀▀ █▀
+            ░█░ █▀█ ██▄ █░▀░█ ██▄ ▄█
+            
+            Blog: cavithemes.tumblr.com
+            Email: cavithemes@gmail.com
+            Personal Email: s.carolaine.v@gmail.com
+            
+        -->
+        <title>{Title}{block:PermalinkPage}{block:PostSummary} &mdash; {PlaintextPostSummary}{/block:PostSummary}{block:PermalinkPage}{block:SearchPage} &mdash; {lang:Search results for SearchQuery} ({SearchResultCount}) {/block:SearchPage}{block:TagPage} &mdash; Posts tagged {Tag}{/block:TagPage}</title>
+        <meta http-equiv="Content-Type" content="text/html;" charset="UTF-8" />
+        <link rel="shortcut icon" href="{Favicon}">
+        <link rel="alternate" type="application/rss+xml" href="{RSS}">
+        {block:Description}<meta name="description" content="{MetaDescription}" />{/block:Description}
+        {block:Hidden}
+        <meta name="color:Background" content="#eeeeee" />
+        <meta name="color:Container bg" content="#ffffff" />
+        <meta name="color:Post" content="#f6f6f6" />
+        <meta name="color:Borders" content="#dfdfdf" />
+        <meta name="color:Accent" content="#c93d12" />
+        <meta name="color:Text" content="#222222" />
+        <meta name="color:Link" content="#222222" />
+        <meta name="color:Link hover" content="#cccccc" />
+        <meta name="color:Ask" content="#ffffff" />
+        <meta name="color:Ask border" content="#dfdfdf" />
+        <meta name="color:Perma link" content="#333333" />
+        <meta name="color:Title" content="#ffffff" />
+        <meta name="color:Title border" content="#eee" />
+        <meta name="color:SubTitle" content="#666666" />
+        <meta name="color:Header bg" content="#fff" />
+        <meta name="color:Header link" content="#222222" />
+        <meta name="color:Header link hover" content="#000" />
+        <meta name="color:Top bar bg" content="#111111" />
+        <meta name="color:Top bar text" content="#fff" />
+        <meta name="color:Follow link" content="#fff" />
+        <meta name="color:Search box bg" content="#fff" />
+        <meta name="color:Search box border" content="#eee" />
+        <meta name="color:Search box text" content="#666" />
+        <meta name="color:Sidebar titles" content="#222" />
+        <meta name="color:Footer bg" content="#000" />
+        <meta name="color:Footer text" content="#fff" />
+        <meta name="color:Footer borders" content="#222" />
+        
+        <meta name="image:Background" content="" />
+        <meta name="image:Featured 1" content="" />
+        <meta name="image:Featured 2" content="" />
+        <meta name="image:Featured 3" content="" />
+        <meta name="image:Sidebar" content="https://66.media.tumblr.com/1ac9dba6246e0cd033a83dba1f108e8e/7c80e8df00a5d4c9-4c/s2048x3072/94fa472e2786af33b6c191abad1f39f3fcd6d1c0.jpg" />
+        <meta name="image:Banner" content="https://66.media.tumblr.com/089c4d64e1511cf7d5773e06c25fadba/7c80e8df00a5d4c9-4c/s2048x3072/7b5a0a9c6501367b7e0442ba9e4a121b39e273e5.png" />
+        
+        <meta name="if:Caption" content="/" />
+        <meta name="if:Tags" content="/" />
+        <meta name="if:Members" content="" />
+        <meta name="if:Affliates" content="" />
+        <meta name="if:Featured" content="" />
+        <meta name="if:Posts I Like" content="" />
+        <meta name="if:Borders" content="" />
+        <meta name="if:Header Border" content="/" />
+        <meta name="if:Header Full Size" content="" />
+        <meta name="if:Header Style 1" content="" />
+        <meta name="if:Post Shadow" content="" />
+        <meta name="if:Infinite Scrolling" content="/"/>
+        
+        <meta name="select:Post Border Radius" title="0" content="0" />
+        <meta name="select:Post Border Radius" title="1" content="1" />
+        <meta name="select:Post Border Radius" title="2" content="2" />
+        <meta name="select:Post Border Radius" title="3" content="3" />
+        <meta name="select:Post Border Radius" title="4" content="4" />
+        <meta name="select:Post Border Radius" title="5" content="5" />
+        
+        <meta name="select:Text Align" title="Left" content="Left" />
+        <meta name="select:Text Align" title="Justify" content="Justify" />
+        
+        <meta name="select:Ordered List Style" title="hiragana-iroha" content="hiragana-iroha" />
+        <meta name="select:Ordered List Style" title="alpha" content="alpha" />
+        <meta name="select:Ordered List Style" title="circle" content="circle" />
+        <meta name="select:Ordered List Style" title="decimal" content="decimal" />
+        <meta name="select:Ordered List Style" title="upper-roman" content="upper-roman" />
+        
+        <meta name="text:Font Size" content="13" />
+        <meta name="text:Subtitle" content="Subtitle goes here" />
+        <meta name="text:Featured Label" content="Recent Posts" />
+        <meta name="text:Affliates Label" content="Affiliates" />
+        <meta name="text:Disclaimer Label" content="Disclaimer" />
+        <meta name="text:Disclaimer" content="Disclaimer message goes here..." />
+        <meta name="text:Creator" content="Creator" />
+        <meta name="text:Estabilished" content="Estabilished" />
+        <meta name="text:OnlineScript" content="" />
+        <meta name="text:ViewsScript" content="" />
+        <meta name="text:Footer Quote" content="As folhas batem palma para ti Senhor, o vento a soprar ministra o louvor, o som direcionado a Ti é com amor." />
+        <meta name="text:Footer Quote Author" content="Gerson Rufino" />
+        
+        <meta name="text:Featured Title 1" content="Featured Title 1" />
+        <meta name="text:Featured Url 1" content="Featured Url 1" />
+        <meta name="text:Featured SubTitle 1" content="Featured Subtitle 1" />
+        <meta name="text:Featured Title 2" content="Featured Title 2" />
+        <meta name="text:Featured Url 2" content="Featured Url 2" />
+        <meta name="text:Featured SubTitle 2" content="Featured Subtitle 2" />
+        <meta name="text:Featured Title 3" content="Featured Title 3" />
+        <meta name="text:Featured Url 3" content="Featured Url 3" />
+        <meta name="text:Featured SubTitle 3" content="Featured Subtitle 3" />
+        
+        <meta name="text:FacebookUsername" content="" />
+        <meta name="text:InstagramUsername" content="" />
+        <meta name="text:LastFmUrl" content="" />
+        <meta name="text:SkypeUsername" content="" />
+        <meta name="text:GooglePlusUrl" content="" />
+        <meta name="text:TwitterUsername" content="" />
+        <meta name="text:TumblrUsername" content="" />
+        <meta name="text:WeHeartItUsername" content="" />
+        <meta name="text:FlickrUsername" content="" />
+        <meta name="text:FlickrId" content="" />
+        <meta name="text:YoutubeUsername" content="" />
+        <meta name="text:WhatsAppNumber" content="" />
+        <meta name="text:WebsiteUrl" content="" />
+        <meta name="text:Email" content="" /> {/block:Hidden}
+        
+        <style type="text/css">
+            body { background: {color:background} url("{image:background}") fixed; color:{color:Text}; font-size:{text:font size}px; }
+            a { color:{color:link}; }
+            a:hover { color:{color:link hover}; }
+            b, strong, bold { color:{color:accent}; }
+            u, underline { text-decoration:none; border-bottom:1px dotted {color:accent}; }
+            #post { background:{color:container bg}; {block:IfBorders}  border-left:1px solid {color:borders}; border-right:1px solid {color:borders}; {/block:IfBorders} {block:PermalinkPage} height: fit-content !important; {/block:PermalinkPage} }
+            #content, .masonry { background:{color:container bg}; }
+            .entry {
+                text-align:{select:text align};
+                background:{color:post};
+                border-radius:{select:post border radius}px;
+                {block:IfBorders}
+                    border:1px solid {color:borders};
+                {/block:IfBorders}
+                {block:IfPostShadow}
+                    -webkit-box-shadow: 0 0 1px 1px {color:borders};
+                    box-shadow: 0 0 1px 1px {color:borders};
+                {/block:IfPostShadow}
+                {block:PermalinkPage} margin-left:50px !important; width:700px !important; {/block:PermalinkPage}
+                display:inline-block;
+                vertical-align:top;
+            }
+            .entry h1 { color:{color:accent}; }
+            .entry h2, .entry h3, .entry h4 { color:{color:accent}; }
+            .entry ol li { list-style-type:{select:Ordered list style}; }
+            .entry ul.info2 { border-top:1px solid {color:borders}; border-bottom:1px solid {color:borders}; }
+            .entry ul li:before { background:{color:accent}; }
+            .scrollup { background:{color:post}; color:{color:text}; border:1px solid {color:borders}; }
+            .entry ul.info { font-weight:500 }
+            .scrollup a {color:{color:accent}; }
+            .custom-like-button { color:{color:text}; }
+            .like_button:hover + .our_button {color:{color:Accent};}
+            .like_button.liked + .our_button {color:{color:Accent};}
+            .our_button,.like_button { color:{color:text}; }
+            ::-webkit-scrollbar-thumb { background:{color:accent}; }
+            ::-webkit-scrollbar-track { background:rgba({RGBcolor:background},0.0); }
+            .link { background:{color:accent}; color:{color:post}; }
+            .linktitle a { color:{color:post}; }
+            .qsub { color:{color:accent}; }
+            .qsub a { color:{color:accent}; border-bottom:1px dotted {color:borders}; }
+            .qsub:after { background:{color:accent}; }
+            .quote span { color:{color:accent}; }
+            #s-m-t-tooltip{ background:{color:post}; border:1px solid {color:borders}; }
+            pre, code, textarea, xmp { color:{color:post}; background:{color:accent}; font-size:calc({text:font size}px - 1px); }
+            hr { border-bottom:1px solid {color:borders}; }
+            blockquote { border-left:2px solid {color:accent}; }
+            .ch { padding:20px !important; }
+            .ch1:nth-child(2n+1){ background:{color:accent}; border:1px solid {color:accent}; color:{color:post}; }
+            .ch1:nth-child(2n+1) b { color:{color:post}; }
+            .ch1:nth-child(2n+2){background:{color:post} !important; border:1px solid {color:accent}; color:{color:accent}; } 
+            .audiodesc { background:{color:accent}; color:{color:post}; }
+            .playbg { background:{color:post}; }
+            .pergunta { background:{color:ask}; border:1px solid {color:ask border}; }
+            .pergunta:after { border-right-color:{color:ask}; }
+            .pergunta:before { border-right-color:{color:ask border}; }
+            .pessoapfoto:after { color:{color:Post}; }
+            .seureblog, .tags { border-top:1px solid {color:borders}; }
+            .seureblog a { color:{color:text}; }
+            .seureblog a:hover { color:{color:accent}; }
+            ::-moz-selection { color:{color:post}; background:{color:accent}; }
+            ::selection { color:{color:post}; background:{color:accent}; }
+            #tumblr_controls, .tmblr-iframe {
+                position:absolute !important;
+                -moz-transform: scale(0.9);
+                -webkit-transform: scale(0.9);
+                -o-transform: scale(0.9);
+                -ms-transform: scale(0.9);
+                transform: scale(0.9);
+            }
+            #soc2 a { background:{color:accent}; color:{color:post};}
+            .sform input { background:{color:search box bg}; border:1px solid {color:search box border} !important; }
+            ::-webkit-input-placeholder { color:{color:search box text}; }
+            :-moz-placeholder { color:{color:search box text}; }
+            ::-moz-placeholder { color:{color:search box text}; }
+            :-ms-input-placeholder { color:{color:search box text}; }
+            .sbox { color:{color:search box text}; }
+            .sform input:hover { color:{color:accent}; border-color:{color:accent} !important;}
+            .sc a { border:2px solid {color:accent}; color:{color:accent}; }
+            .sc a:hover { color:{color:footer bg}; border-color:{color:accent}; background:{color:accent}; }
+            footer { background:{color:footer bg}; color:{color:footer text}; }
+            footer h2 { color:{color:accent}; }
+            footer h2:after { background:{color:accent}; }
+            footer .inf { border-top:1px solid {color:footer borders}; }
+            footer .inf a { color:{color:accent}; }
+            #paginacao { border-left:1px solid {color:borders}; border-right:1px solid {color:borders}; background:{color:container bg}; }
+            #paginacao a, span.total_pages, .caixas, .caixasalt { color:{color:text}; background:{color:post}; {block:IfPostShadow} -webkit-box-shadow: 0 0 1px 1px {color:borders}; box-shadow: 0 0 1px 1px {color:borders}; {/block:IfPostShadow} {block:IfBorders} border:1px solid {color:borders}; {/block:IfBorders} }
+            span.current_page, #paginacao a:hover { color:{color:post}; background:{color:accent}; border-color:{color:accent};}
+            .credit a { background:{color:post}; border:1px solid {color:borders}; }
+            .credit a:hover { background:{color:accent}; color:{color:post};
+                border-color:{color:accent}; }
+            .read_more { border:1px solid rgba({RGBcolor:accent},0.8); background:rgba({RGBcolor:accent},1); color:{color:post}; }
+            .read_more:hover { background:rgba({RGBcolor:accent},0.5); border-color:{color:accent}; color:{color:post}; }
+            ol.notes, .notes li { border-bottom:1px solid {color:borders}; }
+            .tags { {block:IfNotTags} display:none; {/block:IfNotTags} }
+            .tags a { color:rgba({RGBcolor:text},0.8); }
+            .tags a:hover { color:{color:accent}; background:rgba({RGBcolor:accent},0.3); }
+            .caption { {block:IndexPage} {block:IfNotCaption} display:none; {/block:IfNotCaption} {/block:IndexPage} }
+            .caption a:hover { text-decoration:underline; }
+            header { background:{color:Header Bg}; {block:IfHeaderFullSize} border:none !important; {/block:IfHeaderFullSize} {block:IfNotHeaderFullSize} max-width:1270px !important; {/block:IfNotHeaderFullSize} {block:IfBorders}  border-left:1px solid {color:borders}; border-right:1px solid {color:borders}; {/block:IfBorders} } 
+            header h1.title a { color:{color:title}; }
+            nav { background:{color:Header Bg}; {block:IfHeaderBorder} border-bottom:1px solid {color:borders}; {/block:IfHeaderBorder}}
+            nav span { color:{color:accent}; }
+            nav a { color:{color:header link}; }
+            nav a:hover { color:{color:header link hover}; }
+            nav li.blog_title a { color:{color:Accent}; font-weight:600;}
+            .h_desc img { border:1px solid {color:Title Border}; background:rgba({RGBcolor:Title Border},0.5); }
+            .h_desc:after { border-left-color:rgba({RGBcolor:Title Border},1); }
+            .h_desc:before { border-left-color:rgba({RGBcolor:Title Border},1); }
+            .h_title:after, .h_title:before { background:{color:Title border}; }
+            .h_title a { color:{color:Title}; }
+            header sub {  color:{color:Subtitle}; }
+            ul.follow li a { color:{color:Follow link}; }
+            ul.follow li a span { background:{color:Accent}; color:{color:Title}; }
+            #feat { border-bottom:1px solid {color:borders}; }
+            .mdesc2 a { color:{color:accent}; }
+            #membros { background:rgba({RGBcolor:accent},0.4); border:1px solid {color:accent}; color:{color:accent}; }
+            #membros img { border-right:3px solid {color:accent}; }
+            .mdesc a { color:{color:accent}; }
+            li.like_post blockquote { border-left: 1px solid {color:borders}; }
+            li.like_post { border-bottom:1px solid {color:borders}; }
+            .caixas_t { color:{color:sidebar titles}; background:{color:Post}; border:1px solid {color:Borders}; }
+            #stitle b { font-size:calc({text:font size}px - 1px); color:{color:accent}; }
+            #stitle b:after { content:"➡"; }  
+            .pt img{ background:{color:accent}; }
+            ol#nav a { color:{color:Post}; background:{color:Accent}; }
+            ol#nav a:hover { letter-spacing:2px; }
+            .dropdown-content a{ color:{color:header link}; background:{color:post}; border:1px solid {color:borders}; }
+            .dropdown-content a:hover{ background:{color:accent} !important; color:{color:post} !important; }
+            #topbar { background:{color:Top Bar Bg}; color:{color:Top Bar Text}; border-bottom:1px solid {color:borders}; }
+            #topbar tag { background:{color:accent}; color:{color:top bar text}; }
+            nav { font-weight:600; }    
+            {block:IndexPage} aside.right { width:280px; float:right; margin-right:10px; } {/block:IndexPage}
+            {block:PermalinkPage} aside.right { width:350px; display:inline-block; margin-left:810px; } {/block:PermalinkPage}
+            {CustomCSS}
+        </style>
+        
+        <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+        <link rel="stylesheet" href="https://static.tumblr.com/s2qsk1o/nx1qahk9n/cavithemes-eighteen.css">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Crimson+Text:400,400italic,700|Open+Sans:400,400italic,700|Roboto:400,400italic,700|Montserrat:400,400italic,700|Lora:400,400italic,700|Playfair+Display:400,400italic,700|Roboto:400,400italic,700|Raleway" rel="stylesheet" type="text/css">
+        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://static.tumblr.com/me5sfsd/12Qlmj66n/script.js"></script>
+        
+        <script type="text/javascript">
+            $(window).ready(function(){
+            
+            /** align posts **/
+            var $wall = $('#post');
+            $wall.imagesLoaded(function(){
+            $wall.masonry({
+            itemSelector: '.entry',
+            isAnimated : true
+            });
+            });
+            /** align posts **/
+            
+            /** infinite scroll **/
+            $wall.infinitescroll({
+            navSelector : "div#navigation",
+            nextSelector : "div#navigation a#nextPage",
+            itemSelector : '.entry',
+            loadingImg : "https://www.sauvageny.com/sites/all/themes/sauvage/imgs/loading.gif",
+            loadingText : " ",
+            donetext : " ",
+            extraScrollPx : 0,
+            bufferPx : 10000,
+            debug : false,
+            errorCallback: function() {
+            $('#infscr-loading').animate({opacity: .8},2000).fadeOut('normal');
+            }},
+            function( newElements ) {
+            var $newElems = $( newElements );
+            
+            /** make like button works **/
+            var $newElemsIDs = $newElems.map(function(){ 
+                return this.id; 
+            }).get();
+            console.log($newElems, $newElemsIDs);
+            Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
+            /** make like button works **/
+            
+            $newElems.hide();
+            $newElems.imagesLoaded(function(){
+            $wall.masonry( 'appended', $newElems, {isAnimated: true, animationOptions: {duration: 250, easing: 'linear', queue: false}}, function(){$newElems.fadeIn('slow');} );
+            });
+            }); $('#post').show(500);
+            /** infinite scroll **/
+            
+            });
+        </script>
+        
+        <script type="text/javascript" src="https://static.tumblr.com/7qjmkr5/IUmmdsy41/jquery.style-my-tooltips.js"></script>
+        <script> (function($){$(document).ready(function(){$("[title]").style_my_tooltips();});})(jQuery);</script>
+        <script type="text/javascript" src="https://static.tumblr.com/s2qsk1o/XEhoa9hzk/scrollup.js"></script>
+        <script>
+            $(window).scroll(function () {
+              if($(this).scrollTop() > 450) {
+                $('nav').addClass('stick');
+              } else {
+                $('nav').removeClass('stick');
+              }
+            });
+        </script>
+        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        
+    </head>
+
+    <body>
+    
+        <a href="#" class="scrollup" title="scroll to top">
+            <span class="lnr lnr-arrow-up"></span>
+        </a>
+        
+        <header>
+            <div id="topbar">
+                <marquee direction="right" scrollamount="3" behavior="alternate" onmouseover="this.stop();" onmouseout="this.start();">
+                    <tag>New!</tag>Per ea etiam partiendo efficiendi, quem eligendi in sed? Solet suscipit vim ei, interpretaris conclusionemque ut vis.
+                    
+                    <tag>New!</tag>Lick the other cats attack dog, run away and pretend to be victim.
+                    
+                    <tag>New!</tag>Lick the other cats attack dog, run away and pretend to be victim.
+                </marquee>
+            </div>
+        
+        {block:IfHeaderStyle1}
+            <div class="h_centralize">
+                <div class="h_desc">
+                    <img src="{Favicon}" >
+                    <div class="h_title">
+                        <a href="{BlogUrl}">{BlogTitle}</a>
+                        <sub>{text:Subtitle}<sub>
+                    </div>
+                </div>
+                <ul class="follow">
+                    <li><a href="https://www.tumblr.com/follow/{name}"><span class="lnr lnr-users"></span>{lang:Follow}</a></li>
+                    <li><a href="https://www.tumblr.com/"><span class="lnr lnr-home"></span>Dashboard</a></li>
+                    <li><a href="https://www.tumblr.com/dashboard?conversation={Name}"><span class="lnr lnr-bubble"></span>Conversation</a></li>
+                </ul>
+            </div>
+        {/block:IfHeaderStyle1}
+        
+        {block:IfNotHeaderStyle1}
+            <h1 class="title">
+                <a href="{BlogUrl}">{Title}</a>
+                <sub>{text:Subtitle}</sub>
+            </h1>
+        {/block:IfNotHeaderStyle1}
+
+            <div class="banner">
+                <img src="{image:banner}" >
+            </div>
+        
+            <nav>
+            <ol>
+                <li class="blog_title"> <a href="{BlogUrl}">{BlogTitle}</a></li>
+                {block:AskEnabled}
+                    <li><span>01.</span> <a href="{BlogURL}/ask">{AskLabel}</a> </li>
+                {/block:AskEnabled}
+                {block:SubmissionsEnabled}
+                    <li><span>02.</span> <a href="{BlogURL}/submit">{SubmitLabel}</a> </li>
+                {/block:SubmissionsEnabled}
+                <li><span>03.</span> <a href="{BlogURL}/archive">{lang:Archive}</a> </li>
+                <li><span>04.</span> <a href="{BlogURL}/random">{lang:Random}</a> </li>
+                <li><span>05.</span> <a href="{RSS}">RSS</a> </li>
+                {block:HasPages} 
+                    <div class="dropdown">
+                        <a class="dropbtn"><span>06.</span> &nbsp;&nbsp;links</a>
+                        <div class="dropdown-content">
+                            {block:Pages}
+                                <a href="{URL}">{Label}</a>
+                            {/block:Pages}
+                        </div>
+                    </div>
+                {/block:HasPages}
+            </ol>
+            </nav>  
+            
+        </header>
+        
+        <div id="post">
+        
+            <aside class="right">
+                <div class="caixasalt">
+                    <img src="{image:sidebar}" />
+                    {block:Description}
+                        <div class="description">
+                            {Description}
+                        </div>
+                    {/block:Description}
+                    <form action="/search" method="get" class="sform" name="form">
+                    <input type="text" name="q" value="{SearchQuery}" class="sbox"               placeholder="{lang:Search Keywords}..."/></form>
+                </div>
+                
+                <div class="caixas">
+                    <div class="caixas_t">
+                        <span>{lang:Follow Me}</span>
+                    </div>
+                    <div id="soc2">
+                        {block:IfInstagramUsername}
+                            <a target="_blank" href="https://instagram.com/{text:InstagramUsername}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                        {/block:IfInstagramUsername}
+                        
+                        {block:IfLastFmUrl}
+                            <a target="_blank" href="{text:LastFmUrl}"><i class="fa fa-lastfm" aria-hidden="true"></i></a>
+                        {/block:IfLastFmUrl}
+                        
+                        {block:IfFacebookUsername}
+                            <a target="_blank" href="https://facebook.com/{text:FacebookUsername}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        {/block:IfFacebookUsername}
+                        
+                        {block:IfSkypeUsername}
+                            <a target="_blank" href="skype:{text:SkypeUsername}"><i class="fa fa-skype" aria-hidden="true"></i></a>
+                        {/block:IfSkypeUsername}
+                        
+                        {block:IfFlickrUsername}
+                            <a target="_blank" href="https://flickr.com/photos/{text:FlickrUsername}"><i class="fa fa-flickr" aria-hidden="true"></i></a>
+                        {/block:IfFlickrUsername}
+                        
+                        {block:IfTumblrUsername}
+                            <a target="_blank" href="https://{text:TumblrUsername}.tumblr.com/"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
+                        {/block:IfTumblrUsername}            
+                            
+                        {block:IfTwitterUsername}
+                            <a target="_blank" href="https://twitter.com/{text:TwitterUsername}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        {/block:IfTwitterUsername}
+                        
+                        {block:IfYoutubeUsername}
+                            <a target="_blank" href="https://youtube.com/{text:YoutubeUsername}"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                        {/block:IfYoutubeUsername}
+                        
+                        {block:IfWeHeartItUsername}
+                            <a target="_blank" href="https://weheartit.com/{text:WeHeartItUsername}"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                        {/block:IfWeHeartItUsername}
+                        
+                        {block:IfWebsiteUrl}
+                            <a target="_blank" href="{text:WebsiteUrl}"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                        {/block:IfWebsiteUrl}
+                        
+                        {block:IfGooglePlusUrl}
+                            <a target="_blank" href="{text:GooglePlusUrl}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                        {/block:IfGooglePlusUrl}
+                        
+                        {block:IfWhatsAppNumber}
+                            <a title="{text:WhatsAppNumber}"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                        {/block:IfWhatsAppNumber}
+                        
+                        {block:IfEmail}
+                            <a title="{text:Email}"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                        {/block:IfEmail}
+                    </div>
+                </div>
+                
+                {block:IfFlickrId}
+                    <div class="caixas">
+                        <div class="caixas_t">
+                            <span>Flickr Feed</span>
+                        </div>
+                        <div id="flickr_badge_wrapper"><script type="text/javascript" src="https://www.flickr.com/badge_code_v2.gne?count=9&display=latest&size=s&layout=x&source=user&user={text:FlickrId}"></script><center></center></div>
+                    </div>
+                {/block:IfFlickrId}
+                
+                {block:HasPages}
+                    <div class="caixas altc">
+                        <div class="caixas_t">
+                            <span>{lang:Navigate}</span>
+                        </div>
+                        <ol id="nav">
+                            {block:Pages}
+                                <li><a class="um" href="{URL}">{Label}</a></li>
+                            {/block:Pages}
+                        </ul>
+                    </div>
+                {/block:HasPages}
+                
+                {block:IfAffliates}
+                    <div class="caixas">
+                        <div class="caixas_t">
+                                <span>{text:Affliates Label}</span>
+                            </div>
+                        <div class="pt">
+                            <a href="https://amplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/amplamente.tumblr.com/avatar/96/" /></a>
+                            <a href="https://anyhs-themes.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/anyhs-themes.tumblr.com/avatar/96/" /></a>
+                            <a href="https://braziliancode.tumblr.com/" ><img src="https://api.tumblr.com/v2/blog/braziliancode.tumblr.com/avatar/96/" /></a>
+                            <a href="https://ttamplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/ttamplamente.tumblr.com/avatar/96/" /></a>
+                            <a href="https://passo-html.tumblr.com/" ><img src="https://api.tumblr.com/v2/blog/passo-html.tumblr.com/avatar/96/" /></a>
+                            <a href="https://amplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/amplamente.tumblr.com/avatar/96/" /></a>
+                            <a href="https://anyhs-themes.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/anyhs-themes.tumblr.com/avatar/96/" /></a>
+                            <a href="https://braziliancode.tumblr.com/" ><img src="https://api.tumblr.com/v2/blog/braziliancode.tumblr.com/avatar/96/" /></a>
+                            <a href="https://ttamplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/ttamplamente.tumblr.com/avatar/96/" /></a>
+                            <a href="https://passo-html.tumblr.com/" ><img src="https://api.tumblr.com/v2/blog/passo-html.tumblr.com/avatar/96/" /></a>
+                            <a href="https://amplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/amplamente.tumblr.com/avatar/96/" /></a>
+                            <a href="https://amplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/amplamente.tumblr.com/avatar/96/" /></a>
+                        </div>
+                    </div>
+                {/block:IfAffliates}
+                
+                {block:IfFeatured}
+                    <div class="caixas">
+                        <div class="caixas_t">
+                            <span>{text:Featured Label}</span>
+                        </div>
+                        
+                        <div id="feat">
+                            <img src="{image:featured 1}" />
+                            <div class="mdesc2">
+                                <a href="{text:featured url 1}" target="_blank">{text:featured title 1}</a></br>
+                                {text:featured subtitle 1}
+                            </div>
+                        </div>
+                        
+                        <div id="feat">
+                            <img src="{image:featured 2}" />
+                            <div class="mdesc2">
+                                <a href="{text:featured url 2}" target="_blank">{text:featured title 2}</a></br>
+                                {text:featured subtitle 2}
+                            </div>
+                        </div>
+                        
+                        <div id="feat" style="border:none; padding-bottom:0; ">
+                            <img src="{image:featured 3}" />
+                            <div class="mdesc2">
+                                <a href="{text:featured url 3}" target="_blank">{text:featured title 3}</a></br>
+                                {text:featured subtitle 3}
+                            </div>
+                        </div>
+                    </div>
+                {/block:IfFeatured}
+                
+                {block:IfMembers}
+                    <div class="caixas">
+                        <div class="caixas_t">
+                            <span>{lang:Members}</span>
+                        </div>
+                        <br>
+                        {block:GroupMembers} 
+                            {block:GroupMember} 
+                                <div id="membros">
+                                    <a href="{GroupMemberUrl}" target="_blank">
+                                        <img src="{GroupMemberPortraitURL-128}" />
+                                    </a>
+                                    <div class="mdesc">
+                                        <a href="{GroupMemberURL}" target="_blank">{GroupMemberName}</a></br>
+                                        {GroupMemberTitle}
+                                    </div>
+                                </div>
+                            {/block:GroupMember} 
+                        {/block:GroupMembers} 
+                    </div>
+                {/block:IfMembers}
+                
+                {block:AskEnabled}
+                    <div class="caixas">
+                        <div class="caixas_t">
+                            <span>{AskLabel}</span>
+                        </div>
+                        <p><iframe frameborder="0" scrolling="no" width="100%" height="auto" src="https://www.tumblr.com/ask_form/{name}.tumblr.com" id="ask_form"></iframe><!—[if IE]><script type="text/javascript">document.getElementById("ask_form").allowTransparency=true;</script><![endif]—></p>
+                    </div>
+                {/block:AskEnabled}
+                
+                {block:IfTwitterUsername}
+                    <div class="caixas altc">
+                        <div class="caixas_t">
+                            <span>{lang:Latest Tweets}</span>
+                        </div>
+                            <a class="twitter-timeline" href="https://twitter.com/{text:TwitterUsername}" data-tweet-limit="3" data-chrome="nofooter noheader">
+                            </a>
+                    </div>
+                {/block:IfTwitterUsername}
+                
+                {block:IfPostsILike}
+                    {block:Likes}
+                        <div class="caixas">
+                            <div class="caixas_t">
+                                <span>{lang:Stuff I Like}</span>
+                            </div>
+                            
+                            <div id="likes_container">
+                                {Likes limit="5" summarize="100"}
+                                <br>
+                                <div class="plinks">
+                                    <a href="https://www.tumblr.com/liked/by/{Name}" target="_blank">
+                                        {lang:More liked posts}
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {/block:Likes}
+                {/block:IfPostsILike}
+                
+                {block:IfDisclaimer}
+                    <div class="caixas textalign">
+                        <div class="caixas_t">
+                            <span>{text:Disclaimer Label}</span>
+                        </div>
+                        <br>
+                        {block:IfCreator}
+                            <div id="stitle"><b>Creator</b>{text:Creator}</div>
+                        {/block:IfCreator}
+                        {block:IfEstabilished}
+                            <div id="stitle"><b>Estabilished</b>{text:Estabilished}</div>
+                        {/block:IfEstabilished}
+                        {block:IfOnlineScript}
+                            <div id="stitle"><b>Online</b>{text:OnlineScript}</div>
+                        {/block:IfOnlineScript}
+                        {block:IfViewsScript}
+                            <div id="stitle"><b>Views</b>{text:ViewsScript}</div>
+                        {/block:IfViewsScript}
+                        <div id="stitle"><b>Theme by</b><a style="text-transform:uppercase; font-weight:600; color:{color:text};" href="https://cavithemes.tumblr.com/" target="_blank">CAVI Themes</a></div>
+                        <br>
+                        {text:Disclaimer}
+                    </div>
+                {/block:IfDisclaimer}
+                
+            </aside>
+        
+            {block:SearchPage}
+                <div class="entry">
+                    <h1 class="solution"><i class="fa fa-search"></i> &nbsp;{lang:Search results for SearchQuery} ({SearchResultCount}) </h1>
+                </div>
+            {/block:SearchPage}
+            
+            {block:TagPage}
+                <div class="entry">
+                     <h1 class="solution"><i class="fa fa-tags"></i> &nbsp;{lang:TagResultCount posts tagged Tag}</h1>
+                </div>
+            {/block:TagPage}
+        
+            <div id="content">
+                {block:Posts}
+                    <div class="post">
+                        <div class="entry">
+                        
+                        {block:Title} 
+                            <h1>
+                                <span>{Title}</span>
+                            </h1>
+                        {/block:Title}
+                        
+                        {block:Text}
+                            <div class="tcaption">
+                                {Body} 
+                            </div>
+                        {/block:Text}
+                        
+                        {block:Photo}
+                            {LinkOpenTag}
+                                <img src="{PhotoURL-HighRes}" alt="{Photo-Alt}" width="100%"/>
+                            {LinkCloseTag}
+                        {/block:Photo}
+                        
+                        {block:Panorama}
+                            {LinkOpenTag}
+                                <img src="{PhotoURL-Panorama}" alt="{PhotoAlt}" />
+                            {LinkCloseTag}
+                        {/block:Panorama}
+                        
+                        {block:Photoset}
+                            {block:IndexPage} {Photoset-400} {/block:IndexPage}
+                            {block:PermalinkPage} {Photoset-700} {/block:PermalinkPage}
+                        {/block:Photoset}
+                        
+                        {block:Quote}
+                            <div class="quote">
+                                <span>❝</span>
+                                {Quote} 
+                                {block:Source}
+                                    <div class="qsub">
+                                        {Source}
+                                    </div>
+                                {/block:Source}
+                            </div>
+                        {/block:Quote}	
+                        
+                        {block:Link} 
+                            <div class="link">
+                                {block:Thumbnail}
+                                    <img src="{Thumbnail}" class="linkthumb" />
+                                {/block:Thumbnail}
+                                <div class="linktitle">
+                                    <a href="{URL}"{Target}>{Name} <span class="lnr lnr-chevron-right"></span></a>
+                                </div>
+                                {block:Description}
+                                    <div class="linkdesc">
+                                        {Description}
+                                    </div>
+                                {/block:Description}
+                            </div>
+                        {/block:Link}
+                        
+                        {block:Chat}<div class="ch">{block:Lines}<div class="ch1">{block:Label}<b>{Label}</b>{/block:Label}{Line}</div>{/block:Lines}</div>{/block:Chat}
+                        
+                        {block:Audio}
+                            {block:AlbumArt}
+                                <div class="albumfoto">
+                                    <img src="{AlbumArtURL}" />
+                                    <div class="playbg">
+                                        <div class="audioplay">
+                                            {block:AudioPlayer}
+                                                {AudioPlayerWhite}
+                                            {/block:AudioPlayer}
+                                        </div>
+                                    </div>
+                                </div>
+                            {/block:AlbumArt}
+                            <div class="audiodesc">
+                                {block:Artist}{Artist}{/block:Artist}</br>
+                                {block:Album}{Album}{/block:Album}</br>
+                                {block:TrackName}{TrackName}{/block:TrackName}</br>
+                                {block:PlayCount}{PlayCountWithLabel}{/block:PlayCount}
+                            </div>
+                        {/block:Audio}	
+                        
+                        {block:Video}
+                            {block:IndexPage} {Video-400} {/block:IndexPage}
+                            {block:PermalinkPage} {Video-700} {/block:PermalinkPage}
+                        {/block:Video}	
+                        
+                        {block:Answer}
+                            <div class="asked">
+                                <div class="pessoapfoto">
+                                    <img src="{AskerPortraitURL-64}">
+                                </div>
+                                <div class="pergunta">
+                                    <div class="pessoap">{lang:Asker asked 2}:</div>
+                                    {Question}
+                                </div>
+                                <div class="sresposta">
+                                    {Answer}
+                                </div>
+                            </div>
+                        {/block:Answer}
+                        
+                        {block:Caption}
+                            <div class="caption">
+                                {Caption}
+                            </div>
+                        {/block:Caption}
+                        
+                        {block:HasTags}
+                            <div class="tags">
+                                {block:Tags}
+                                    <a href="{TagUrl}">#{Tag}</a>
+                                {/block:Tags}
+                            </div>
+                        {/block:HasTags}
+                        
+                        {block:Date}
+                            <div class="seureblog">
+                                <div class="rel"> 
+                                    <a href="{ReblogUrl}"><i class="lnr lnr-sync" style="font-size:20px;"></i></a>
+                                    <div class="custom-like-button">{LikeButton}
+                                        <span class="our_button"><i class="lnr lnr-heart"></i></span>
+                                    </div>
+                                </div> 
+                                <ul class="info">
+                                    <a href="{Permalink}">{Month} {DayOfMonth}{DayOFMonthSuffix}, {Year}</a>
+                                    <a href="{Permalink}#notas">{NoteCountWithLabel}</a>
+                                </ul>
+                            </div>
+                        {/block:Date}
+                        
+                        {block:PermalinkPage}
+                            {block:Date}
+                                <ul class="info2">
+                                    <li><a>{lang:It has NoteCount notes} </a></li> <br>
+                                    <li><a>{lang:Posted on DayOfWeek DayOfMonth Month Year 3}</a></li> <br>
+                                    <li><a>{lang:Reblogged from ReblogParentName}</a></li> <br>
+                                    <li><a>{lang:Originally from ReblogRootName}</a></li> <br>
+                                </ul>
+                            {/block:Date}
+                        
+                            {block:PostNotes}<div id="notas">{PostNotes-64}</div>{/block:PostNotes} 
+                        {/block:PermalinkPage}
+                            
+                        </div> <!-- fim de .entry -->
+                    </div> <!-- fim de .post -->
+                {/block:Posts}
+            </div> <!-- fim de #content -->
+        </div> <!-- fim de #post -->
+        
+        <div class="bth">
+                
+        </div>
+        
+        {block:IfNotInfiniteScrolling}
+            {block:Pagination}
+                <div id="paginacao">
+                    {block:PreviousPage}
+                    <a href="{PreviousPage}"><span class="lnr lnr-chevron-left"></span></a>
+                    {/block:PreviousPage}
+                    {block:JumpPagination length="10"}
+                    {block:CurrentPage}
+                    <span class="current_page">{CurrentPage}</span>
+                    {/block:CurrentPage}
+                    {block:JumpPage}
+                    <a class="jump_page" href="{URL}">{PageNumber}</a>
+                    {/block:JumpPage}
+                    {/block:JumpPagination}
+                    <span class="total_pages">...{TotalPages}</span>
+                    {block:NextPage}
+                    <a href="{NextPage}"><span class="lnr lnr-chevron-right"></span></a>
+                    {/block:NextPage}
+                </div>
+            {/block:Pagination}
+        {/block:IfNotInfiniteScrolling}
+        
+        <footer>
+            <div class="dd">
+                <img src="{Favicon}" class="aviv" >
+                <p class="descricao">
+                    {Description}
+                </p>
+            </div>
+            
+            <div class="dd">
+                <h2>{Title}</h2>
+                <div class="sc">
+                    {block:IfInstagramUsername}
+                        <a target="_blank" href="https://instagram.com/{text:InstagramUsername}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                    {/block:IfInstagramUsername}
+                    
+                    {block:IfLastFmUrl}
+                        <a target="_blank" href="{text:LastFmUrl}"><i class="fa fa-lastfm" aria-hidden="true"></i></a>
+                    {/block:IfLastFmUrl}
+                    
+                    {block:IfFacebookUsername}
+                        <a target="_blank" href="https://facebook.com/{text:FacebookUsername}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                    {/block:IfFacebookUsername}
+                    
+                    {block:IfSkypeUsername}
+                        <a target="_blank" href="skype:{text:SkypeUsername}"><i class="fa fa-skype" aria-hidden="true"></i></a>
+                    {/block:IfSkypeUsername}
+                    
+                    {block:IfFlickrUsername}
+                        <a target="_blank" href="https://flickr.com/photos/{text:FlickrUsername}"><i class="fa fa-flickr" aria-hidden="true"></i></a>
+                    {/block:IfFlickrUsername}
+                    
+                    {block:IfTumblrUsername}
+                        <a target="_blank" href="https://{text:TumblrUsername}.tumblr.com/"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
+                    {/block:IfTumblrUsername}            
+                        
+                    {block:IfTwitterUsername}
+                        <a target="_blank" href="https://twitter.com/{text:TwitterUsername}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    {/block:IfTwitterUsername}
+                    
+                    {block:IfYoutubeUsername}
+                        <a target="_blank" href="https://youtube.com/{text:YoutubeUsername}"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                    {/block:IfYoutubeUsername}
+                    
+                    {block:IfWeHeartItUsername}
+                        <a target="_blank" href="https://weheartit.com/{text:WeHeartItUsername}"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                    {/block:IfWeHeartItUsername}
+                    
+                    {block:IfWebsiteUrl}
+                        <a target="_blank" href="{text:WebsiteUrl}"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                    {/block:IfWebsiteUrl}
+                    
+                    {block:IfGooglePlusUrl}
+                        <a target="_blank" href="{text:GooglePlusUrl}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                    {/block:IfGooglePlusUrl}
+                    
+                    {block:IfWhatsAppNumber}
+                        <a title="{text:WhatsAppNumber}"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                    {/block:IfWhatsAppNumber}
+                    
+                    {block:IfEmail}
+                        <a title="{text:Email}"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                    {/block:IfEmail}
+                    
+                    <a target="_blank" title="theme by cavithemes" href="https://cavithemes.tumblr.com/"><i class="fa fa-code" aria-hidden="true"></i></a>
+                </div>
+            </div>
+            
+            <div class="dd">
+                <div class="quote">
+                    "{text:Footer Quote}"
+                </div>
+                <div class="qsub">
+                    &mdash; {text:Footer Quote Author}
+                </div>
+            </div>
+            <section class="inf">
+                {Title}, {CopyrightYears} all rights reserved &mdash; Theme created by <a href="https://cavithemes.tumblr.com/">CAVI Themes</a>
+            </section>
+        </footer>
+        
+        {block:IfInfiniteScrolling}<div class="column navigation" id="navigation">{block:Pagination}{block:PreviousPage}<a href="{PreviousPage}" class="navigate">{/block:PreviousPage}{block:PreviousPage}</a>{/block:PreviousPage}{block:NextPage}<a href="{NextPage}" class="navigate" id="nextPage">{/block:NextPage}{block:NextPage}</a>{/block:NextPage}{/block:Pagination}</div>{/block:IfInfiniteScrolling}
+        
+        <div class="src">{block:ContentSource}<a href="{SourceURL}">{lang:Source}:{block:SourceLogo} <img src="{BlackLogoURL}" width="{LogoWidth}" height="{LogoHeight}" alt="{SourceTitle}" />{/block:SourceLogo}{block:NoSourceLogo}{SourceLink}{/block:NoSourceLogo}</a>{/block:ContentSource}{block:RebloggedFrom}<a href="{ReblogParentURL}">Via</a>{/block:RebloggedFrom}</div>
+        
+        <div class="credit"><a href="https://cavithemes.tumblr.com/" title="theme by cavithemes" target="_blank">CT</a></div>
+    
+    </body>
+</html>
