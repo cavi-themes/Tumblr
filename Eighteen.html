@@ -255,7 +255,7 @@
             #topbar tag { background:{color:accent}; color:{color:top bar text}; }
             nav { font-weight:600; }    
             {block:IndexPage} aside.right { width:280px; float:right; margin-right:10px; } {/block:IndexPage}
-            {block:PermalinkPage} aside.right { width:350px; display:inline-block; margin-left:810px; } {/block:PermalinkPage}
+            {block:PermalinkPage} aside.right { width: 350px; display: inline-block; margin-right: 40px; } {/block:PermalinkPage}
             {CustomCSS}
         </style>
         
@@ -267,54 +267,55 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
         <script type="text/javascript" src="https://static.tumblr.com/me5sfsd/12Qlmj66n/script.js"></script>
-        
-        <script type="text/javascript">
-            $(window).ready(function(){
-            
-            /** align posts **/
-            var $wall = $('#post');
-            $wall.imagesLoaded(function(){
-            $wall.masonry({
-            itemSelector: '.entry',
-            isAnimated : true
-            });
-            });
-            /** align posts **/
-            
-            /** infinite scroll **/
-            $wall.infinitescroll({
-            navSelector : "div#navigation",
-            nextSelector : "div#navigation a#nextPage",
-            itemSelector : '.entry',
-            loadingImg : "https://www.sauvageny.com/sites/all/themes/sauvage/imgs/loading.gif",
-            loadingText : " ",
-            donetext : " ",
-            extraScrollPx : 0,
-            bufferPx : 10000,
-            debug : false,
-            errorCallback: function() {
-            $('#infscr-loading').animate({opacity: .8},2000).fadeOut('normal');
-            }},
-            function( newElements ) {
-            var $newElems = $( newElements );
-            
-            /** make like button works **/
-            var $newElemsIDs = $newElems.map(function(){ 
-                return this.id; 
-            }).get();
-            console.log($newElems, $newElemsIDs);
-            Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
-            /** make like button works **/
-            
-            $newElems.hide();
-            $newElems.imagesLoaded(function(){
-            $wall.masonry( 'appended', $newElems, {isAnimated: true, animationOptions: {duration: 250, easing: 'linear', queue: false}}, function(){$newElems.fadeIn('slow');} );
-            });
-            }); $('#post').show(500);
-            /** infinite scroll **/
-            
-            });
-        </script>
+        {block:IndexPage}
+            <script type="text/javascript">
+                $(window).ready(function(){
+                
+                /** align posts **/
+                var $wall = $('#post');
+                $wall.imagesLoaded(function(){
+                $wall.masonry({
+                itemSelector: '.entry',
+                isAnimated : true
+                });
+                });
+                /** align posts **/
+                
+                /** infinite scroll **/
+                $wall.infinitescroll({
+                navSelector : "div#navigation",
+                nextSelector : "div#navigation a#nextPage",
+                itemSelector : '.entry',
+                loadingImg : "https://www.sauvageny.com/sites/all/themes/sauvage/imgs/loading.gif",
+                loadingText : " ",
+                donetext : " ",
+                extraScrollPx : 0,
+                bufferPx : 10000,
+                debug : false,
+                errorCallback: function() {
+                $('#infscr-loading').animate({opacity: .8},2000).fadeOut('normal');
+                }},
+                function( newElements ) {
+                var $newElems = $( newElements );
+                
+                /** make like button works **/
+                var $newElemsIDs = $newElems.map(function(){ 
+                    return this.id; 
+                }).get();
+                console.log($newElems, $newElemsIDs);
+                Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
+                /** make like button works **/
+                
+                $newElems.hide();
+                $newElems.imagesLoaded(function(){
+                $wall.masonry( 'appended', $newElems, {isAnimated: true, animationOptions: {duration: 250, easing: 'linear', queue: false}}, function(){$newElems.fadeIn('slow');} );
+                });
+                }); $('#post').show(500);
+                /** infinite scroll **/
+                
+                });
+            </script>
+        {/block:IndexPage}
         
         <script type="text/javascript" src="https://static.tumblr.com/7qjmkr5/IUmmdsy41/jquery.style-my-tooltips.js"></script>
         <script> (function($){$(document).ready(function(){$("[title]").style_my_tooltips();});})(jQuery);</script>
@@ -406,240 +407,6 @@
         
         <div id="post">
         
-            <aside class="right">
-                <div class="caixasalt">
-                    <img src="{image:sidebar}" />
-                    {block:Description}
-                        <div class="description">
-                            {Description}
-                        </div>
-                    {/block:Description}
-                    <form action="/search" method="get" class="sform" name="form">
-                    <input type="text" name="q" value="{SearchQuery}" class="sbox"               placeholder="{lang:Search Keywords}..."/></form>
-                </div>
-                
-                <div class="caixas">
-                    <div class="caixas_t">
-                        <span>{lang:Follow Me}</span>
-                    </div>
-                    <div id="soc2">
-                        {block:IfInstagramUsername}
-                            <a target="_blank" href="https://instagram.com/{text:InstagramUsername}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                        {/block:IfInstagramUsername}
-                        
-                        {block:IfLastFmUrl}
-                            <a target="_blank" href="{text:LastFmUrl}"><i class="fa fa-lastfm" aria-hidden="true"></i></a>
-                        {/block:IfLastFmUrl}
-                        
-                        {block:IfFacebookUsername}
-                            <a target="_blank" href="https://facebook.com/{text:FacebookUsername}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        {/block:IfFacebookUsername}
-                        
-                        {block:IfSkypeUsername}
-                            <a target="_blank" href="skype:{text:SkypeUsername}"><i class="fa fa-skype" aria-hidden="true"></i></a>
-                        {/block:IfSkypeUsername}
-                        
-                        {block:IfFlickrUsername}
-                            <a target="_blank" href="https://flickr.com/photos/{text:FlickrUsername}"><i class="fa fa-flickr" aria-hidden="true"></i></a>
-                        {/block:IfFlickrUsername}
-                        
-                        {block:IfTumblrUsername}
-                            <a target="_blank" href="https://{text:TumblrUsername}.tumblr.com/"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
-                        {/block:IfTumblrUsername}            
-                            
-                        {block:IfTwitterUsername}
-                            <a target="_blank" href="https://twitter.com/{text:TwitterUsername}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                        {/block:IfTwitterUsername}
-                        
-                        {block:IfYoutubeUsername}
-                            <a target="_blank" href="https://youtube.com/{text:YoutubeUsername}"><i class="fa fa-youtube" aria-hidden="true"></i></a>
-                        {/block:IfYoutubeUsername}
-                        
-                        {block:IfWeHeartItUsername}
-                            <a target="_blank" href="https://weheartit.com/{text:WeHeartItUsername}"><i class="fa fa-heart" aria-hidden="true"></i></a>
-                        {/block:IfWeHeartItUsername}
-                        
-                        {block:IfWebsiteUrl}
-                            <a target="_blank" href="{text:WebsiteUrl}"><i class="fa fa-globe" aria-hidden="true"></i></a>
-                        {/block:IfWebsiteUrl}
-                        
-                        {block:IfGooglePlusUrl}
-                            <a target="_blank" href="{text:GooglePlusUrl}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-                        {/block:IfGooglePlusUrl}
-                        
-                        {block:IfWhatsAppNumber}
-                            <a title="{text:WhatsAppNumber}"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
-                        {/block:IfWhatsAppNumber}
-                        
-                        {block:IfEmail}
-                            <a title="{text:Email}"><i class="fa fa-envelope" aria-hidden="true"></i></a>
-                        {/block:IfEmail}
-                    </div>
-                </div>
-                
-                {block:IfFlickrId}
-                    <div class="caixas">
-                        <div class="caixas_t">
-                            <span>Flickr Feed</span>
-                        </div>
-                        <div id="flickr_badge_wrapper"><script type="text/javascript" src="https://www.flickr.com/badge_code_v2.gne?count=9&display=latest&size=s&layout=x&source=user&user={text:FlickrId}"></script><center></center></div>
-                    </div>
-                {/block:IfFlickrId}
-                
-                {block:HasPages}
-                    <div class="caixas altc">
-                        <div class="caixas_t">
-                            <span>{lang:Navigate}</span>
-                        </div>
-                        <ol id="nav">
-                            {block:Pages}
-                                <li><a class="um" href="{URL}">{Label}</a></li>
-                            {/block:Pages}
-                        </ul>
-                    </div>
-                {/block:HasPages}
-                
-                {block:IfAffliates}
-                    <div class="caixas">
-                        <div class="caixas_t">
-                                <span>{text:Affliates Label}</span>
-                            </div>
-                        <div class="pt">
-                            <a href="https://amplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/amplamente.tumblr.com/avatar/96/" /></a>
-                            <a href="https://anyhs-themes.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/anyhs-themes.tumblr.com/avatar/96/" /></a>
-                            <a href="https://braziliancode.tumblr.com/" ><img src="https://api.tumblr.com/v2/blog/braziliancode.tumblr.com/avatar/96/" /></a>
-                            <a href="https://ttamplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/ttamplamente.tumblr.com/avatar/96/" /></a>
-                            <a href="https://passo-html.tumblr.com/" ><img src="https://api.tumblr.com/v2/blog/passo-html.tumblr.com/avatar/96/" /></a>
-                            <a href="https://amplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/amplamente.tumblr.com/avatar/96/" /></a>
-                            <a href="https://anyhs-themes.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/anyhs-themes.tumblr.com/avatar/96/" /></a>
-                            <a href="https://braziliancode.tumblr.com/" ><img src="https://api.tumblr.com/v2/blog/braziliancode.tumblr.com/avatar/96/" /></a>
-                            <a href="https://ttamplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/ttamplamente.tumblr.com/avatar/96/" /></a>
-                            <a href="https://passo-html.tumblr.com/" ><img src="https://api.tumblr.com/v2/blog/passo-html.tumblr.com/avatar/96/" /></a>
-                            <a href="https://amplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/amplamente.tumblr.com/avatar/96/" /></a>
-                            <a href="https://amplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/amplamente.tumblr.com/avatar/96/" /></a>
-                        </div>
-                    </div>
-                {/block:IfAffliates}
-                
-                {block:IfFeatured}
-                    <div class="caixas">
-                        <div class="caixas_t">
-                            <span>{text:Featured Label}</span>
-                        </div>
-                        
-                        <div id="feat">
-                            <img src="{image:featured 1}" />
-                            <div class="mdesc2">
-                                <a href="{text:featured url 1}" target="_blank">{text:featured title 1}</a></br>
-                                {text:featured subtitle 1}
-                            </div>
-                        </div>
-                        
-                        <div id="feat">
-                            <img src="{image:featured 2}" />
-                            <div class="mdesc2">
-                                <a href="{text:featured url 2}" target="_blank">{text:featured title 2}</a></br>
-                                {text:featured subtitle 2}
-                            </div>
-                        </div>
-                        
-                        <div id="feat" style="border:none; padding-bottom:0; ">
-                            <img src="{image:featured 3}" />
-                            <div class="mdesc2">
-                                <a href="{text:featured url 3}" target="_blank">{text:featured title 3}</a></br>
-                                {text:featured subtitle 3}
-                            </div>
-                        </div>
-                    </div>
-                {/block:IfFeatured}
-                
-                {block:IfMembers}
-                    <div class="caixas">
-                        <div class="caixas_t">
-                            <span>{lang:Members}</span>
-                        </div>
-                        <br>
-                        {block:GroupMembers} 
-                            {block:GroupMember} 
-                                <div id="membros">
-                                    <a href="{GroupMemberUrl}" target="_blank">
-                                        <img src="{GroupMemberPortraitURL-128}" />
-                                    </a>
-                                    <div class="mdesc">
-                                        <a href="{GroupMemberURL}" target="_blank">{GroupMemberName}</a></br>
-                                        {GroupMemberTitle}
-                                    </div>
-                                </div>
-                            {/block:GroupMember} 
-                        {/block:GroupMembers} 
-                    </div>
-                {/block:IfMembers}
-                
-                {block:AskEnabled}
-                    <div class="caixas">
-                        <div class="caixas_t">
-                            <span>{AskLabel}</span>
-                        </div>
-                        <p><iframe frameborder="0" scrolling="no" width="100%" height="auto" src="https://www.tumblr.com/ask_form/{name}.tumblr.com" id="ask_form"></iframe><!—[if IE]><script type="text/javascript">document.getElementById("ask_form").allowTransparency=true;</script><![endif]—></p>
-                    </div>
-                {/block:AskEnabled}
-                
-                {block:IfTwitterUsername}
-                    <div class="caixas altc">
-                        <div class="caixas_t">
-                            <span>{lang:Latest Tweets}</span>
-                        </div>
-                            <a class="twitter-timeline" href="https://twitter.com/{text:TwitterUsername}" data-tweet-limit="3" data-chrome="nofooter noheader">
-                            </a>
-                    </div>
-                {/block:IfTwitterUsername}
-                
-                {block:IfPostsILike}
-                    {block:Likes}
-                        <div class="caixas">
-                            <div class="caixas_t">
-                                <span>{lang:Stuff I Like}</span>
-                            </div>
-                            
-                            <div id="likes_container">
-                                {Likes limit="5" summarize="100"}
-                                <br>
-                                <div class="plinks">
-                                    <a href="https://www.tumblr.com/liked/by/{Name}" target="_blank">
-                                        {lang:More liked posts}
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    {/block:Likes}
-                {/block:IfPostsILike}
-                
-                {block:IfDisclaimer}
-                    <div class="caixas textalign">
-                        <div class="caixas_t">
-                            <span>{text:Disclaimer Label}</span>
-                        </div>
-                        <br>
-                        {block:IfCreator}
-                            <div id="stitle"><b>Creator</b>{text:Creator}</div>
-                        {/block:IfCreator}
-                        {block:IfEstabilished}
-                            <div id="stitle"><b>Estabilished</b>{text:Estabilished}</div>
-                        {/block:IfEstabilished}
-                        {block:IfOnlineScript}
-                            <div id="stitle"><b>Online</b>{text:OnlineScript}</div>
-                        {/block:IfOnlineScript}
-                        {block:IfViewsScript}
-                            <div id="stitle"><b>Views</b>{text:ViewsScript}</div>
-                        {/block:IfViewsScript}
-                        <div id="stitle"><b>Theme by</b><a style="text-transform:uppercase; font-weight:600; color:{color:text};" href="https://cavithemes.tumblr.com/" target="_blank">CAVI Themes</a></div>
-                        <br>
-                        {text:Disclaimer}
-                    </div>
-                {/block:IfDisclaimer}
-                
-            </aside>
-        
             {block:SearchPage}
                 <div class="entry">
                     <h1 class="solution"><i class="fa fa-search"></i> &nbsp;{lang:Search results for SearchQuery} ({SearchResultCount}) </h1>
@@ -654,7 +421,7 @@
         
             <div id="content">
                 {block:Posts}
-                    <div class="post">
+                    {block:IndexPage}<div class="post">{/block:IndexPage}
                         <div class="entry">
                         
                         {block:Title} 
@@ -800,8 +567,242 @@
                         {/block:PermalinkPage}
                             
                         </div> <!-- fim de .entry -->
-                    </div> <!-- fim de .post -->
+                   {block:IndexPage}</div>{/block:IndexPage} <!-- fim de .post -->
                 {/block:Posts}
+                
+                 <aside class="right">
+                    <div class="caixasalt">
+                        <img src="{image:sidebar}" />
+                        {block:Description}
+                            <div class="description">
+                                {Description}
+                            </div>
+                        {/block:Description}
+                        <form action="/search" method="get" class="sform" name="form">
+                        <input type="text" name="q" value="{SearchQuery}" class="sbox"               placeholder="{lang:Search Keywords}..."/></form>
+                    </div>
+                    
+                    <div class="caixas">
+                        <div class="caixas_t">
+                            <span>{lang:Follow Me}</span>
+                        </div>
+                        <div id="soc2">
+                            {block:IfInstagramUsername}
+                                <a target="_blank" href="https://instagram.com/{text:InstagramUsername}"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                            {/block:IfInstagramUsername}
+                            
+                            {block:IfLastFmUrl}
+                                <a target="_blank" href="{text:LastFmUrl}"><i class="fa fa-lastfm" aria-hidden="true"></i></a>
+                            {/block:IfLastFmUrl}
+                            
+                            {block:IfFacebookUsername}
+                                <a target="_blank" href="https://facebook.com/{text:FacebookUsername}"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                            {/block:IfFacebookUsername}
+                            
+                            {block:IfSkypeUsername}
+                                <a target="_blank" href="skype:{text:SkypeUsername}"><i class="fa fa-skype" aria-hidden="true"></i></a>
+                            {/block:IfSkypeUsername}
+                            
+                            {block:IfFlickrUsername}
+                                <a target="_blank" href="https://flickr.com/photos/{text:FlickrUsername}"><i class="fa fa-flickr" aria-hidden="true"></i></a>
+                            {/block:IfFlickrUsername}
+                            
+                            {block:IfTumblrUsername}
+                                <a target="_blank" href="https://{text:TumblrUsername}.tumblr.com/"><i class="fa fa-tumblr" aria-hidden="true"></i></a>
+                            {/block:IfTumblrUsername}            
+                                
+                            {block:IfTwitterUsername}
+                                <a target="_blank" href="https://twitter.com/{text:TwitterUsername}"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                            {/block:IfTwitterUsername}
+                            
+                            {block:IfYoutubeUsername}
+                                <a target="_blank" href="https://youtube.com/{text:YoutubeUsername}"><i class="fa fa-youtube" aria-hidden="true"></i></a>
+                            {/block:IfYoutubeUsername}
+                            
+                            {block:IfWeHeartItUsername}
+                                <a target="_blank" href="https://weheartit.com/{text:WeHeartItUsername}"><i class="fa fa-heart" aria-hidden="true"></i></a>
+                            {/block:IfWeHeartItUsername}
+                            
+                            {block:IfWebsiteUrl}
+                                <a target="_blank" href="{text:WebsiteUrl}"><i class="fa fa-globe" aria-hidden="true"></i></a>
+                            {/block:IfWebsiteUrl}
+                            
+                            {block:IfGooglePlusUrl}
+                                <a target="_blank" href="{text:GooglePlusUrl}"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                            {/block:IfGooglePlusUrl}
+                            
+                            {block:IfWhatsAppNumber}
+                                <a title="{text:WhatsAppNumber}"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+                            {/block:IfWhatsAppNumber}
+                            
+                            {block:IfEmail}
+                                <a title="{text:Email}"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                            {/block:IfEmail}
+                        </div>
+                    </div>
+                    
+                    {block:IfFlickrId}
+                        <div class="caixas">
+                            <div class="caixas_t">
+                                <span>Flickr Feed</span>
+                            </div>
+                            <div id="flickr_badge_wrapper"><script type="text/javascript" src="https://www.flickr.com/badge_code_v2.gne?count=9&display=latest&size=s&layout=x&source=user&user={text:FlickrId}"></script><center></center></div>
+                        </div>
+                    {/block:IfFlickrId}
+                    
+                    {block:HasPages}
+                        <div class="caixas altc">
+                            <div class="caixas_t">
+                                <span>{lang:Navigate}</span>
+                            </div>
+                            <ol id="nav">
+                                {block:Pages}
+                                    <li><a class="um" href="{URL}">{Label}</a></li>
+                                {/block:Pages}
+                            </ul>
+                        </div>
+                    {/block:HasPages}
+                    
+                    {block:IfAffliates}
+                        <div class="caixas">
+                            <div class="caixas_t">
+                                    <span>{text:Affliates Label}</span>
+                                </div>
+                            <div class="pt">
+                                <a href="https://amplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/amplamente.tumblr.com/avatar/96/" /></a>
+                                <a href="https://anyhs-themes.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/anyhs-themes.tumblr.com/avatar/96/" /></a>
+                                <a href="https://braziliancode.tumblr.com/" ><img src="https://api.tumblr.com/v2/blog/braziliancode.tumblr.com/avatar/96/" /></a>
+                                <a href="https://ttamplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/ttamplamente.tumblr.com/avatar/96/" /></a>
+                                <a href="https://passo-html.tumblr.com/" ><img src="https://api.tumblr.com/v2/blog/passo-html.tumblr.com/avatar/96/" /></a>
+                                <a href="https://amplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/amplamente.tumblr.com/avatar/96/" /></a>
+                                <a href="https://anyhs-themes.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/anyhs-themes.tumblr.com/avatar/96/" /></a>
+                                <a href="https://braziliancode.tumblr.com/" ><img src="https://api.tumblr.com/v2/blog/braziliancode.tumblr.com/avatar/96/" /></a>
+                                <a href="https://ttamplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/ttamplamente.tumblr.com/avatar/96/" /></a>
+                                <a href="https://passo-html.tumblr.com/" ><img src="https://api.tumblr.com/v2/blog/passo-html.tumblr.com/avatar/96/" /></a>
+                                <a href="https://amplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/amplamente.tumblr.com/avatar/96/" /></a>
+                                <a href="https://amplamente.tumblr.com" ><img src="https://api.tumblr.com/v2/blog/amplamente.tumblr.com/avatar/96/" /></a>
+                            </div>
+                        </div>
+                    {/block:IfAffliates}
+                    
+                    {block:IfFeatured}
+                        <div class="caixas">
+                            <div class="caixas_t">
+                                <span>{text:Featured Label}</span>
+                            </div>
+                            
+                            <div id="feat">
+                                <img src="{image:featured 1}" />
+                                <div class="mdesc2">
+                                    <a href="{text:featured url 1}" target="_blank">{text:featured title 1}</a></br>
+                                    {text:featured subtitle 1}
+                                </div>
+                            </div>
+                            
+                            <div id="feat">
+                                <img src="{image:featured 2}" />
+                                <div class="mdesc2">
+                                    <a href="{text:featured url 2}" target="_blank">{text:featured title 2}</a></br>
+                                    {text:featured subtitle 2}
+                                </div>
+                            </div>
+                            
+                            <div id="feat" style="border:none; padding-bottom:0; ">
+                                <img src="{image:featured 3}" />
+                                <div class="mdesc2">
+                                    <a href="{text:featured url 3}" target="_blank">{text:featured title 3}</a></br>
+                                    {text:featured subtitle 3}
+                                </div>
+                            </div>
+                        </div>
+                    {/block:IfFeatured}
+                    
+                    {block:IfMembers}
+                        <div class="caixas">
+                            <div class="caixas_t">
+                                <span>{lang:Members}</span>
+                            </div>
+                            <br>
+                            {block:GroupMembers} 
+                                {block:GroupMember} 
+                                    <div id="membros">
+                                        <a href="{GroupMemberUrl}" target="_blank">
+                                            <img src="{GroupMemberPortraitURL-128}" />
+                                        </a>
+                                        <div class="mdesc">
+                                            <a href="{GroupMemberURL}" target="_blank">{GroupMemberName}</a></br>
+                                            {GroupMemberTitle}
+                                        </div>
+                                    </div>
+                                {/block:GroupMember} 
+                            {/block:GroupMembers} 
+                        </div>
+                    {/block:IfMembers}
+                    
+                    {block:AskEnabled}
+                        <div class="caixas">
+                            <div class="caixas_t">
+                                <span>{AskLabel}</span>
+                            </div>
+                            <p><iframe frameborder="0" scrolling="no" width="100%" height="auto" src="https://www.tumblr.com/ask_form/{name}.tumblr.com" id="ask_form"></iframe><!—[if IE]><script type="text/javascript">document.getElementById("ask_form").allowTransparency=true;</script><![endif]—></p>
+                        </div>
+                    {/block:AskEnabled}
+                    
+                    {block:IfTwitterUsername}
+                        <div class="caixas altc">
+                            <div class="caixas_t">
+                                <span>{lang:Latest Tweets}</span>
+                            </div>
+                                <a class="twitter-timeline" href="https://twitter.com/{text:TwitterUsername}" data-tweet-limit="3" data-chrome="nofooter noheader">
+                                </a>
+                        </div>
+                    {/block:IfTwitterUsername}
+                    
+                    {block:IfPostsILike}
+                        {block:Likes}
+                            <div class="caixas">
+                                <div class="caixas_t">
+                                    <span>{lang:Stuff I Like}</span>
+                                </div>
+                                
+                                <div id="likes_container">
+                                    {Likes limit="5" summarize="100"}
+                                    <br>
+                                    <div class="plinks">
+                                        <a href="https://www.tumblr.com/liked/by/{Name}" target="_blank">
+                                            {lang:More liked posts}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        {/block:Likes}
+                    {/block:IfPostsILike}
+                    
+                    {block:IfDisclaimer}
+                        <div class="caixas textalign">
+                            <div class="caixas_t">
+                                <span>{text:Disclaimer Label}</span>
+                            </div>
+                            <br>
+                            {block:IfCreator}
+                                <div id="stitle"><b>Creator</b>{text:Creator}</div>
+                            {/block:IfCreator}
+                            {block:IfEstabilished}
+                                <div id="stitle"><b>Estabilished</b>{text:Estabilished}</div>
+                            {/block:IfEstabilished}
+                            {block:IfOnlineScript}
+                                <div id="stitle"><b>Online</b>{text:OnlineScript}</div>
+                            {/block:IfOnlineScript}
+                            {block:IfViewsScript}
+                                <div id="stitle"><b>Views</b>{text:ViewsScript}</div>
+                            {/block:IfViewsScript}
+                            <div id="stitle"><b>Theme by</b><a style="text-transform:uppercase; font-weight:600; color:{color:text};" href="https://cavithemes.tumblr.com/" target="_blank">CAVI Themes</a></div>
+                            <br>
+                            {text:Disclaimer}
+                        </div>
+                    {/block:IfDisclaimer}
+                    
+                </aside>
             </div> <!-- fim de #content -->
         </div> <!-- fim de #post -->
         
